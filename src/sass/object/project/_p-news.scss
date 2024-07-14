@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-news {
+  padding: rem(56) 0 rem(40);
+  @include mq("md") {
+    padding: rem(113) 0 rem(80);
+  }
+}
+
+.p-news__inner {
+  @include mq("md") {
+    max-width: calc(rem(768) + rem(30));
+  }
+}
+
+.p-news__heading-wrap {
+  text-align: center;
+}
+
+.p-news__lists {
+  display: grid;
+  gap: rem(26);
+  margin-top: rem(56);
+  @include mq("md") {
+    gap: rem(31);
+  }
+}
+
+.p-news__btn {
+  margin-top: rem(45);
+  text-align: center;
+}

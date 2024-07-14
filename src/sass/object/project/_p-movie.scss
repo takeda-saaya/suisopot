@@ -1,0 +1,205 @@
+@use "global" as *;
+
+.p-movie {
+  position: relative;
+  padding: rem(56) 0 rem(50);
+  @include mq("md") {
+    padding: rem(73) 0 rem(80);
+  }
+}
+
+.p-movie::before,
+.p-movie::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.p-movie::before {
+  background-image: url(.././images/common/movie-top__sp.png);
+  top: 0;
+  left: 0;
+  height: rem(16);
+  aspect-ratio: 390/16;
+
+  @include mq("md") {
+    background-image: url(.././images/common/movie-top__pc.png);
+    top: 0;
+    left: 0;
+    height: rem(33);
+    aspect-ratio: 1440/33;
+  }
+}
+
+.p-movie::after {
+  background-image: url(.././images/common/movie-bottom__sp.png);
+  bottom: 0;
+  left: 0;
+  height: rem(10);
+  aspect-ratio: 390/10;
+  @include mq("md") {
+    background-image: url(.././images/common/movie-bottom__pc.png);
+    bottom: 0;
+    left: 0;
+    height: rem(40);
+    aspect-ratio: 1440/40;
+  }
+}
+
+.p-movie__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(16);
+  @include mq("md") {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: rem(84);
+  }
+}
+
+.p-movie__box a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: rem(360);
+  border-radius: 16px;
+  background: var(
+    --gradation,
+    linear-gradient(177deg, #50bfcb -29.45%, rgba(80, 191, 203, 0.42) 127.88%)
+  );
+  @include mq("md") {
+    width: 100%;
+  }
+}
+
+.p-movie__box a:hover {
+  background: $white1;
+  .p-movie__text {
+    color: #50bfcb;
+  }
+  .p-movie__img::after {
+    transform: scale(1.25);
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+}
+
+.p-movie__box a:hover::after {
+  border-color: var(--gradation, #50bfcb);
+}
+
+.p-movie__box a:hover .p-movie__text--left::before {
+  background-image: url(.././images/common/movie-icon1-hover.png);
+}
+
+.p-movie__box a:hover.p-movie__text--right::before {
+  background-image: url(.././images/common/movie-icon2-hover.png);
+}
+
+.p-movie__box a::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  z-index: 2;
+  transition: 0.3s all;
+}
+
+.p-movie__img {
+  position: relative;
+  width: 100%;
+  max-width: rem(180);
+  aspect-ratio: 180/120;
+  border-radius: 16px 0 0 16px;
+  z-index: 100;
+  @include mq("md") {
+    max-width: vw(1440, 226);
+    aspect-ratio: 226/160;
+  }
+}
+
+.p-movie__img::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: rem(50);
+  height: rem(50);
+  background-image: url(.././images/common/movie-start.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s;
+  transform-origin: center;
+  aspect-ratio: 1/1;
+  @include mq("md") {
+    width: rem(64);
+    height: rem(64);
+  }
+}
+
+.p-movie__img img {
+  border-radius: 16px 0 0 16px;
+  height: 100%;
+}
+
+.p-movie__img,
+.p-movie__img img {
+  border-radius: 16px 0 0 16px;
+}
+
+.p-movie__text {
+  width: vw(390, 180);
+  position: relative;
+  color: $white1;
+  font-family: Yomogi;
+  font-size: min(vw(390, 20), 20px);
+  letter-spacing: -1.8px;
+  text-align: center;
+  padding-top: rem(52);
+  margin-inline: auto;
+  white-space: nowrap;
+  @include mq("md") {
+    width: min(vw(1440, 243), rem(243));
+    font-size: min(vw(1440, 25), 20px);
+    letter-spacing: -2.25px;
+  }
+}
+
+.p-movie__text::before {
+  position: absolute;
+  content: "";
+  top: rem(11);
+  left: 50%;
+  transform: translatex(-50%);
+  width: rem(25);
+  height: rem(25);
+  aspect-ratio: 1/1;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include mq("md") {
+    top: rem(6);
+    width: rem(36);
+    height: rem(36);
+  }
+}
+
+.p-movie__box:nth-child(1) .p-movie__text::before {
+  background-image: url(.././images/common/movie-icon1.png);
+}
+
+.p-movie__box:nth-child(2) .p-movie__text::before {
+  background-image: url(.././images/common/movie-icon2.png);
+}

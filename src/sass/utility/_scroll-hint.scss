@@ -1,0 +1,61 @@
+@use "global" as *;
+
+.scroll-hint-icon-wrap.is-active {
+  background: rgba(25, 25, 25, 0.3);
+  @include mq("xl") {
+    background: none;
+  }
+  .scroll-hint-icon-white {
+    display: block;
+    @include mq("xl") {
+      display: none;
+    }
+  }
+}
+
+.scroll-hint-icon-white {
+  display: none;
+}
+
+.scroll-hint-icon {
+  position: absolute;
+  top: calc(50% - 66px) !important;
+  left: calc(50% - 123px) !important;
+  border-radius: 16.6px !important;
+  box-sizing: border-box;
+  transition: opacity 0.3s;
+  text-align: center;
+  width: rem(250) !important;
+  height: rem(160) !important;
+  opacity: 1 !important;
+  background: $white1 !important;
+  padding: rem(37) rem(10) rem(10) !important ;
+}
+
+.scroll-hint-icon:before {
+  background-image: url(.././images/common/scrol-hand.png) !important;
+  width: rem(67) !important;
+  height: rem(85.7) !important;
+}
+
+.scroll-hint-icon:after {
+  background-image: url(.././images/common/scroll-arrow.png) !important;
+  width: rem(59.7) !important;
+  height: rem(92) !important;
+  top: rem(-12) !important;
+  left: rem(103) !important;
+  background-size: contain;
+  background-position: center;
+}
+
+.scroll-hint-icon-white .scroll-hint-text {
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 3.52px;
+}
+
+.scroll-hint-text {
+  margin-top: rem(15);
+}

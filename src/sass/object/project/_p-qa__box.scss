@@ -1,0 +1,135 @@
+@use "global" as *;
+
+.p-qa-box {
+  position: relative;
+  border-bottom: 1px solid $gray;
+  padding-right: rem(18);
+  padding-bottom: rem(24);
+  @include mq("md") {
+  }
+  &.is-open {
+    .p-qa-box__wrap {
+      display: block;
+    }
+    .p-qa-box__head:after {
+      background-image: url(.././images/common/qa-box-close.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: rem(24);
+      height: rem(24);
+    }
+  }
+}
+
+.p-qa-box__wrap {
+  display: none;
+}
+
+.p-qa-box__head {
+  display: flex;
+  align-items: start;
+  padding: 0;
+  width: 100%;
+  @include mq("md") {
+    // padding: 29px 77px 17px 17px;
+  }
+}
+
+.p-qa-box__head::after {
+  position: absolute;
+  content: "";
+  background-image: url(.././images/common/qa-box-open.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 0;
+  right: 0;
+  width: rem(24);
+  height: rem(24);
+  aspect-ratio: 1/1;
+}
+
+.p-qa-box__icon1 {
+  position: relative;
+  color: $white1;
+  font-family: Lato;
+  font-size: rem(15);
+  font-weight: $bold;
+  line-height: 1;
+  padding-left: rem(6);
+  padding-top: rem(2);
+  @include mq("md") {
+    font-size: rem(16);
+    padding-top: rem(3);
+  }
+}
+
+.p-qa-box__icon1::before {
+  position: absolute;
+  content: "";
+  top: rem(-3);
+  left: 0;
+  width: rem(25);
+  height: rem(25);
+  background-color: $blue;
+  border-radius: 50%;
+  z-index: -1;
+  @include mq("md") {
+    top: 0;
+  }
+}
+
+.p-qa-box__text1 {
+  letter-spacing: 0.64px;
+  margin-left: rem(21);
+  text-align: start;
+  @include mq("md") {
+    line-height: 1.7;
+    letter-spacing: 0.48px;
+  }
+}
+
+.p-qa-box__wrap {
+  margin-top: rem(24);
+}
+
+.p-qa-box__body {
+  display: flex;
+  align-items: start;
+}
+
+.p-qa-box__icon2 {
+  position: relative;
+  color: $blue;
+  font-family: Lato;
+  font-size: rem(15);
+  font-weight: $bold;
+  line-height: 1.5;
+  padding-left: rem(7);
+}
+
+.p-qa-box__icon2::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: rem(25);
+  height: rem(25);
+  background-color: $white1;
+  border-radius: 50%;
+  z-index: -1;
+  stroke-width: 0.478px;
+  stroke: var(--accent-Blue, #82bfed);
+  border: 1px solid;
+}
+
+.p-qa-box__text2 {
+  text-align: justify;
+  line-height: 1.8;
+  margin-left: rem(21);
+  @include mq("md") {
+    line-height: 1.7;
+    letter-spacing: 0.48px;
+  }
+}

@@ -1,0 +1,190 @@
+@use "global" as *;
+
+.p-header {
+  background-color: $white1;
+  color: $black;
+  @include mq("md") {
+    min-height: vw(1440, 104);
+  }
+}
+
+.p-header__inner {
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: $padding-sp;
+  padding-right: $padding-sp;
+  @include mq(md) {
+    padding-left: vw(1440, 45);
+    padding-right: vw(1440, 34);
+  }
+}
+
+.p-header__left {
+  display: flex;
+  min-height: inherit;
+}
+
+.p-header__logo {
+  width: 100%;
+  max-width: rem(151);
+  position: relative;
+  z-index: 9999;
+  min-height: inherit;
+  @include mq(md) {
+    max-width: min(vw(1440, 187), rem(250));
+  }
+}
+
+.p-header__logo a {
+  min-height: inherit;
+}
+
+.p-header__logo a img {
+  height: auto;
+  min-height: inherit;
+  object-fit: contain;
+}
+
+.p-header__pc-nav {
+  margin-left: vw(1440, 45);
+}
+
+.p-header__right {
+  display: none;
+  @include mq("md") {
+    display: flex;
+    flex-direction: row;
+    gap: vw(1440, 24);
+  }
+}
+
+.p-header__info {
+  text-align: right;
+}
+
+.p-header__tel a {
+  position: relative;
+  font-family: Lato;
+  font-size: vw(1440, 24);
+  font-weight: $bold;
+  padding-left: vw(1440, 8);
+}
+
+.p-header__tel a::before {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  top: 50%;
+  left: rem(-3);
+  transform: translatey(-50%);
+  width: vw(1440, 16);
+  height: vw(1440, 16);
+  aspect-ratio: 1/1;
+  background-image: url(.././images/common/header-tel.png);
+  background-size: contain;
+  background-position: center;
+}
+
+.p-header__hour {
+  font-size: vw(1440, 12);
+  margin-top: vw(1440, 4);
+}
+
+.p-header__btns {
+  display: flex;
+  gap: vw(1440, 8);
+}
+
+.p-header__hamburger {
+  position: absolute;
+  top: rem(21);
+  right: rem(15);
+  z-index: 5;
+  width: rem(27);
+  height: rem(16.5);
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-header__sp-right {
+  width: rem(170);
+
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.p-header__sp-btn {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.p-header-sp__wrap {
+  position: fixed;
+  overflow-y: scroll;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(100%);
+  transition: 0.3s ease-in-out;
+  margin-top: rem(60);
+}
+
+.p-header-sp__bottom {
+  background-color: $white1;
+  margin-inline: auto;
+  padding: rem(40) rem(30) rem(100);
+}
+
+.p-header-sp__info {
+  text-align: center;
+}
+
+.p-header-sp__info a {
+  position: relative;
+  font-size: rem(24);
+  font-weight: $bold;
+}
+
+.p-header-sp__info a::before {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  top: 50%;
+  right: calc(50% + 79px);
+  transform: translatey(-50%);
+  width: rem(16);
+  height: rem(16);
+  aspect-ratio: 1/1;
+  background-image: url(.././images/common/header-tel.png);
+  background-size: contain;
+  background-position: center;
+}
+
+.p-header-sp__hour {
+  font-size: rem(12);
+}
+
+.p-header-sp__btns {
+  display: flex;
+  gap: rem(8);
+  margin-top: rem(24);
+  justify-content: center;
+}
+
+body.is-open {
+  overflow: hidden;
+  .p-header-sp__wrap {
+    transform: translateX(0px);
+    z-index: -7;
+  }
+  .c-header-btn {
+    display: none;
+  }
+}

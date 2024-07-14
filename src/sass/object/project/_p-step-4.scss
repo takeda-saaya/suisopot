@@ -1,0 +1,33 @@
+@use "global" as *;
+
+.p-step-4 {
+  position: relative;
+  background-color: $white2;
+  padding: rem(44) 0 rem(24);
+  @include mq("md") {
+    padding: rem(80) 0 rem(80);
+  }
+}
+
+.p-step-4__heading-wrap {
+  text-align: center;
+}
+
+.p-step-4__boxs {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: rem(40);
+  margin-top: rem(55);
+  @include mq("md") {
+    margin-top: rem(120);
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: rem(31);
+    row-gap: rem(100);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mq("lg") {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

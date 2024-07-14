@@ -1,0 +1,133 @@
+@use "global" as *;
+
+.p-sub-cta {
+  position: relative;
+  background-color: $green;
+  padding-top: rem(56.5);
+  padding-bottom: rem(124);
+  @include mq("md") {
+    padding-top: rem(35);
+    padding-bottom: rem(100);
+  }
+}
+
+.p-sub-cta::before,
+.p-sub-cta::after {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+}
+
+.p-sub-cta::before {
+  top: rem(-13);
+  left: 0;
+  width: 100%;
+  height: rem(16);
+  background-image: url(.././images/common/cta-bg__sp.png);
+  background-size: cover;
+  background-position: top left;
+  @include mq("md") {
+    top: rem(-50);
+    background-image: url(.././images/common/cta-bg__pc.png);
+    width: 100%;
+    height: rem(50);
+  }
+}
+
+.p-sub-cta::after {
+  bottom: rem(-48);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(155);
+  height: rem(155);
+  aspect-ratio: 1/1;
+  background-image: url(.././images/common/machine.png);
+  background-size: contain;
+  background-position: center;
+  @include mq("xl") {
+    bottom: rem(-69);
+    left: 88%;
+    width: vw(1440, 334);
+    height: rem(332);
+    aspect-ratio: 334/332;
+  }
+}
+
+.p-sub-cta__heading {
+  text-align: center;
+}
+
+.main-heading span {
+  font-weight: $bold;
+}
+
+.p-sub-cta__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: rem(52);
+  margin-top: rem(69.5);
+  @include mq("md") {
+    flex-direction: row;
+    margin-top: rem(46);
+    gap: vw(1440, 48);
+  }
+}
+
+.p-sub-cta__box {
+  text-align: center;
+}
+
+.p-sub-cta__text {
+  position: relative;
+  display: inline-block;
+  font-weight: $bold;
+  @include mq("md") {
+    font-size: rem(24);
+    letter-spacing: 0.72px;
+  }
+}
+
+.p-sub-cta__text::before,
+.p-sub-cta__text::after {
+  position: absolute;
+  content: "";
+  width: rem(18);
+  height: rem(18);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1/1;
+  @include mq("md") {
+    width: rem(22);
+    height: rem(22);
+  }
+}
+
+.p-sub-cta__text::before {
+  background-image: url(.././images/common/campaign-text1-left.png);
+  top: 0;
+  right: rem(-26.5);
+}
+
+.p-sub-cta__text::after {
+  background-image: url(.././images/common/campaign-text1-right.png);
+  top: 0;
+  left: rem(-26.5);
+}
+
+.p-sub-cta__btn {
+  margin-top: rem(8);
+  @include mq("md") {
+    margin-top: rem(15);
+  }
+}
+
+.p-sub-cta__box:nth-of-type(1) .c-arrow-btn::before {
+  right: rem(23);
+}
+
+.p-sub-cta__box:nth-of-type(2) .c-arrow-btn::before {
+  right: rem(74);
+}

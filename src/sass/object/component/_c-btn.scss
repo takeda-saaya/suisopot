@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.c-btn {
+  display: block;
+  width: rem(160);
+  color: $white1;
+  text-align: center;
+  background-color: $red;
+  padding: rem(16.5) rem(5);
+  border-radius: 40px;
+  box-shadow: 0px 0px 4px 0px rgba(83, 46, 37, 0.25);
+  font-size: rem(16);
+  line-height: 1;
+  letter-spacing: 3.2px;
+  font-weight: $bold;
+  @include mq(md) {
+    display: inline-block;
+    font-size: vw(1440, 16);
+    width: vw(1440, 160);
+    padding: vw(1440, 16.5) vw(1440, 5);
+  }
+}
+
+.c-btn:hover {
+  background: $white1;
+  color: $red;
+  opacity: 1;
+}

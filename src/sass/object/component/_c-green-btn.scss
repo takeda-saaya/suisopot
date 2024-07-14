@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.c-green-btn {
+  display: block;
+  text-align: center;
+  color: $white1;
+  width: rem(258);
+  padding: rem(20) rem(5);
+  border-radius: 32px;
+  background: var(
+    --gradation,
+    linear-gradient(177deg, #50bfcb -29.45%, rgba(80, 191, 203, 0.42) 127.88%)
+  );
+  font-weight: $bold;
+  margin-inline: auto;
+  letter-spacing: 0;
+}
+
+.c-green-btn:hover {
+  color: #50bfcb;
+  background: $white1;
+  box-shadow: 0px 0px 4px 0px rgba(83, 46, 37, 0.25);
+}

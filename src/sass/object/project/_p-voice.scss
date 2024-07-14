@@ -1,0 +1,13 @@
+@use "global" as *;
+
+.p-voice {
+  background: $white2;
+  padding: rem(63) 0 rem(40);
+  @include mq("md") {
+    padding: rem(95) 0;
+  }
+}
+
+.p-reason__heading-wrap {
+  text-align: center;
+}

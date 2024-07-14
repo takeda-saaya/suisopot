@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.swiper-button-prev:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.swiper-button-next:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}

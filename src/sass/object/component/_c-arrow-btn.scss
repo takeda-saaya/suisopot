@@ -1,0 +1,54 @@
+@use "global" as *;
+
+.c-arrow-btn {
+  display: block;
+  position: relative;
+  width: rem(300);
+  font-size: rem(20);
+  color: $white1;
+  border-radius: 40px;
+  font-weight: $bold;
+  padding: rem(16.5) rem(5) rem(20);
+  line-height: 1;
+  letter-spacing: 0;
+  box-shadow: 0px 0px 4px 0px rgba(83, 46, 37, 0.25);
+  text-align: center;
+  background-color: $red;
+  @include mq("md") {
+    display: inline-block;
+    width: min(vw(1440, 400), rem(400));
+    font-size: min(vw(1440, 28), rem(28));
+    padding: min(vw(1440, 30), rem(30)) min(vw(1440, 10), rem(10));
+  }
+}
+
+.c-arrow-btn::before {
+  position: absolute;
+  top: 50%;
+  right: rem(10);
+  transform: translatey(-50%);
+  background-image: url(.././images/common/btn-icon.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  width: rem(20);
+  height: rem(20);
+  z-index: 5;
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.c-arrow-btn:hover {
+  background: $white1;
+  color: $red;
+  opacity: 1;
+}
+
+.c-arrow-btn:hover::before {
+  background-image: url(.././images/common/cta-btn-hover.png);
+  @include mq("md") {
+    display: none;
+  }
+}

@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-reason {
+  padding-top: rem(55);
+  padding-bottom: rem(40);
+  @include mq("md") {
+    padding-top: rem(80);
+    padding-bottom: rem(68);
+  }
+}
+
+.p-reason__heading-wrap {
+  text-align: center;
+}
+
+.p-reason__items {
+  display: grid;
+  gap: rem(60);
+  margin-top: rem(40);
+  flex-direction: column;
+  @include mq("md") {
+    margin-top: rem(80);
+    gap: rem(40);
+    row-gap: rem(33);
+    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.p-reason__item {
+  position: relative;
+}

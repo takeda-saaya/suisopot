@@ -1,0 +1,50 @@
+@use "global" as *;
+
+.p-step-3 {
+  position: relative;
+  background-color: $white1;
+  padding: rem(66) 0;
+  @include mq("md") {
+    padding: rem(80) 0 rem(111);
+  }
+}
+
+.p-step-3::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: rem(16);
+  aspect-ratio: 390/16;
+  background-image: url(.././images/common/step-3-bottom__sp.png);
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+  @include mq("md") {
+    bottom: 0;
+    left: 0;
+    height: rem(33);
+    aspect-ratio: 1440/33;
+    background-image: url(.././images/common/step-3-bottom__pc.png);
+  }
+}
+
+.p-step-3__heading-wrap {
+  text-align: center;
+}
+
+.p-step-3__boxs {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: rem(40);
+  margin-top: rem(53);
+  @include mq("md") {
+    margin-top: rem(120);
+    flex-wrap: wrap;
+    align-items: baseline;
+    row-gap: rem(100);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.p-fv__picture {
+  width: 100%;
+}
+
+.p-fv__picture img {
+  object-fit: contain;
+  height: auto;
+}

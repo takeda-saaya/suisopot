@@ -1,0 +1,112 @@
+@use "global" as *;
+
+.p-footer {
+  position: relative;
+  padding: rem(56) 0 rem(40);
+  @include mq("md") {
+    padding: rem(64) 0 rem(20);
+  }
+}
+
+.p-footer::after {
+  position: absolute;
+  content: "";
+  bottom: rem(-40);
+  left: 0;
+  width: 100%;
+  height: rem(40);
+  aspect-ratio: 390/40;
+  background-image: url(.././images/common/footer-bottom__sp.png);
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+  @include mq("md") {
+    bottom: rem(-101);
+    left: 0;
+    height: rem(101);
+    aspect-ratio: 1440/101;
+    background-image: url(.././images/common/footer-bottom__pc.png);
+  }
+}
+
+.p-footer__items {
+  display: flex;
+  flex-direction: column;
+  width: 156px;
+  margin-inline: auto;
+  text-align: center;
+  @include mq(md) {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0;
+  }
+}
+
+.p-footer__item a {
+  color: $gray;
+  padding: rem(12) 0;
+  font-size: rem(13);
+  @include mq(md) {
+    font-size: vw(1440, 16);
+    padding: vw(1440, 12) vw(1440, 16);
+    border-left: 1px solid $gray;
+  }
+}
+
+.p-footer__item a:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.p-footer__item:nth-child(1) a {
+  @include mq("md") {
+    padding: rem(12) rem(16) rem(12) 0;
+    border-left: none;
+  }
+}
+
+.p-footer__logo {
+  width: 100%;
+  max-width: rem(95);
+  aspect-ratio: 1/1;
+  margin-top: rem(40);
+  margin-inline: auto;
+  @include mq(md) {
+    max-width: vw(1440, 141);
+    margin-top: rem(48);
+  }
+}
+
+.p-footer__logo a img {
+  height: auto;
+}
+
+.p-footer__text {
+  color: $gray;
+  font-size: rem(13);
+  font-weight: $medium;
+  margin-top: rem(40);
+  text-align: center;
+  @include mq("md") {
+    font-size: vw(1440, 16);
+    margin-top: rem(48);
+    white-space: nowrap;
+  }
+}
+
+.p-footer__copy {
+  position: absolute;
+  bottom: rem(-32);
+  left: 50%;
+  transform: translatex(-50%);
+  color: $gray;
+  font-size: rem(7);
+  text-align: center;
+  z-index: 2;
+  @include mq(md) {
+    font-size: rem(14);
+    bottom: rem(-64);
+  }
+}

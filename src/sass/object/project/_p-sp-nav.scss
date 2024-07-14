@@ -1,0 +1,49 @@
+@use "global" as *;
+
+.p-sp-nav {
+  background: var(
+    --gradation,
+    linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.8) 100%
+    ),
+    linear-gradient(180deg, #007adf 0%, #00ecbc 100%)
+  );
+  padding: rem(67) rem(11) rem(84) rem(19);
+}
+
+.p-sp-nav__items {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+}
+
+.p-sp-nav__item {
+  position: relative;
+}
+
+.p-sp-nav__item::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: rem(65);
+  transform: translatey(-50%);
+  width: rem(15);
+  height: rem(9);
+  aspect-ratio: 15/9;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(.././images/common/sp-nav-icon.png);
+}
+
+.p-sp-nav__item a {
+  color: $gray;
+  font-size: rem(20);
+  text-transform: uppercase;
+  padding-bottom: rem(8);
+  padding-left: rem(49);
+  border-bottom: 1px solid $white1;
+}

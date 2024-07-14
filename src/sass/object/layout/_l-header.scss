@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.l-header {
+  min-height: rem(60);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}

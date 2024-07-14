@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.p-room-swiper {
+  padding-top: rem(40);
+  padding-bottom: rem(40);
+  @include mq("md") {
+    padding-top: rem(66);
+    padding-bottom: rem(41);
+  }
+}
+
+.p-room-swiper__slide {
+  @include mq("md") {
+    transform: scale(0.75) !important;
+    transition: 0.7s;
+  }
+}
+
+.p-room-swiper__slide img {
+  height: auto;
+}
+
+.p-room-swiper .swiper-slide-active {
+  @include mq("md") {
+    z-index: 1;
+    transform: scale(1.15) !important;
+  }
+}

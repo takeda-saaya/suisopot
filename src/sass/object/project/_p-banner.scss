@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.p-banner {
+  padding: rem(20) 0;
+  @include mq("md") {
+    padding: rem(40) 0;
+  }
+}
+
+.p-banner__inner {
+  @include mq("md") {
+    max-width: calc(rem(1281) + rem(60));
+  }
+}
+
+.p-banner__img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  margin-inline: auto;
+  @include mq("md") {
+    aspect-ratio: 1281/675;
+  }
+}
+
+.p-banner__img img {
+  height: auto;
+}

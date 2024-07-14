@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-room {
+  padding-top: rem(92);
+  @include mq("md") {
+    padding-bottom: rem(80);
+    padding-top: rem(60);
+  }
+}
+
+.p-room__inner {
+  padding: 0;
+  max-width: 100%;
+  @include mq("md") {
+    max-width: calc(rem(1280) + rem(160));
+    padding: 0 rem(80);
+  }
+}
+
+.p-room__heading-wrap {
+  text-align: center;
+}
+
+.p-room__text {
+  margin-top: rem(37);
+  text-align: center;
+  font-size: rem(14);
+  @include mq("md") {
+    margin-top: rem(40);
+    font-size: rem(18) !important;
+  }
+}

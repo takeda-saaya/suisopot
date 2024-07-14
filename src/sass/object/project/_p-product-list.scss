@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.p-product-list {
+  display: flex;
+  align-items: center;
+  @include mq("md") {
+    gap: rem(24);
+  }
+}
+
+.p-product-list__title {
+  width: rem(96);
+  font-size: rem(13);
+  @include mq("md") {
+    width: rem(100);
+    font-size: min(vw(1440, 16), rem(16));
+    line-height: 1.7;
+    letter-spacing: 0.48px;
+  }
+}
+
+.p-product-list_text {
+  font-size: rem(13);
+  letter-spacing: -0.39px;
+  width: rem(249);
+  @include mq("md") {
+    font-size: min(vw(1440, 16), rem(16));
+    width: rem(552);
+  }
+}
+
+.p-product-list_text span {
+  width: rem(249);
+  font-size: rem(16);
+  line-height: 1.7;
+  letter-spacing: 0.48px;
+  @include mq("md") {
+    font-size: min(vw(1440, 16), rem(16));
+  }
+}

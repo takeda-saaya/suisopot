@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.c-header-btn {
+  display: block;
+  position: relative;
+  width: rem(128);
+  padding: rem(9) rem(20);
+  border-radius: 32px;
+  letter-spacing: 0;
+  color: $white1;
+  border-radius: 40px;
+  font-weight: $bold;
+  background-color: $red;
+  box-shadow: 0px 0px 3px 0px rgba(83, 46, 37, 0.25);
+  text-align: center;
+  @include mq("md") {
+    width: rem(400);
+    padding: rem(20) rem(10);
+    border-radius: 52.4px;
+  }
+}
+
+.c-header-btn::before {
+  position: absolute;
+  top: 50%;
+  right: rem(8);
+  transform: translatey(-50%);
+  background-image: url(.././images/common/btn-icon.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
+  width: rem(9);
+  height: rem(15);
+  z-index: 5;
+}
