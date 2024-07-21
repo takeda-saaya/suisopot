@@ -1657,7 +1657,7 @@ body.is-open .c-header-btn {
   background-image: url(.././images/common/movie-icon1-hover.png);
 }
 
-.p-movie__box a:hover.p-movie__text--right::before {
+.p-movie__box a:hover .p-movie__text--right::before {
   background-image: url(.././images/common/movie-icon2-hover.png);
 }
 
